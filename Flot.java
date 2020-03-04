@@ -40,7 +40,12 @@ public class Flot {
     public Reseau créerReseauResiduel() {
         Reseau residuel = new Reseau(reseauF.getN(), reseauF.getS(), reseauF.getT());
 	//à compléter
-	
+        for(int i =0; i <residuel.getN();i++){
+            for(int j =0; j < residuel.getN(); j++){
+                residuel.setArc(i,j,residuel.getArc(i,j) - this.valeurFlot[i][j]);
+            }
+        }
+
         return residuel;
     }
 

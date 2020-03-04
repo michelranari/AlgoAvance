@@ -17,6 +17,16 @@ public class MainGraph {
     	img.creerImage("example");
 
     	InstanceDebruitage instdeb = new InstanceDebruitage(img);
+    	instdeb.setAlpha(7);
     	System.out.println(instdeb);
+
+    	Reseau r = new Reseau(instdeb);
+    	System.out.println("Reseau:");
+    	System.out.println(r);
+
+    	arcForReseau double[4][4]= {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}}
+
+    	Reseau r1 = new Reseau();
+
    }
 }

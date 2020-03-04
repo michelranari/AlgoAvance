@@ -87,8 +87,8 @@ public class Reseau {
 	// à completer
         int n = inst.getN();
        double[][] adj = new double[n+2][n+2];
-       this.s  = n+1
-       this.t = n + 2;
+       this.s  = n;
+       this.t = n + 1;
 
        for(int i =0;i< n; i++){
         for(int j =0;j< n; j++){
@@ -102,23 +102,24 @@ public class Reseau {
        }
 
 
-       for(int i =n;i< n+1; i++){
-        for(int j =n;j< n+1; j++){
-            if(inst.isVoisin(i,j)){
-                adj[i][j] = inst.getAlpha();
-            }
-            else{
-                adj[i][j] = 0;
-            }
+       for(int i=0;i<n;i++){
+        if(inst.getB(i) == 0){
+            adj[n][i] = 0;
+            adj[i][n] = 0;
+
+            adj[n+1][i] = 0;
+            adj[i][n+1] = 1;
+        }else{
+            adj[n][i] = 1;
+            adj[i][n] = 0;
+
+            adj[n+1][i] = 0;
+            adj[i][n+1] = 0;
         }
        }
 
+       this.arc = adj;
 
-
-
-
-
-	
     }
 
 
@@ -141,11 +142,11 @@ public class Reseau {
         return t;
     }
 
-    public void set(int i, int j, double v){
+    public void setArc(int i, int j, double v){
 	arc[i][j]=v;
     }
 
-    public double get(int i, int j){
+    public double getArc(int i, int j){
 	return arc[i][j];
     }
     
