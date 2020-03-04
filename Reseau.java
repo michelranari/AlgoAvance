@@ -205,6 +205,24 @@ public class Reseau {
     public Couple<ArrayList<Integer>,ArrayList<Integer>> trouverChemin()
     {
 	//à completer
+        List<Integer> sommetPasse = new ArrayList<>();
+        List<Integer> chemin = new ArrayList<>();
+
+        int current = this.s;
+
+        while(current != t){
+            List<Integer> voisins = new ArrayList<>();
+            for(int i = 0;i<n+1;i++){
+                if(this.arc[current][i] != 0){
+                    voisins.add(i);
+                }
+            }
+
+
+        }
+
+
+
 	return null;
     }
 
